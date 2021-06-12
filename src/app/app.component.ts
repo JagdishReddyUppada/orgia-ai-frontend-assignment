@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from './models/User.model';
+import { UserDataService } from './services/user-data.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'origa-ai-frontend-assignment';
+
+  usersData!: User[];
+
+  constructor(private userService: UserDataService) {
+          this.userService.getUsersData().subscribe(
+            (usersResponse) => {
+              this.usersData = usersResponse;
+            },
+            () => {
+              console.log('Not able to get users data.');
+            }
+          );
+        }
+         
 }

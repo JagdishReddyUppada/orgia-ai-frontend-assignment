@@ -1,0 +1,24 @@
+.border-box {
+  box-shadow: 10px 10px 5px grey;
+  background-color: #cdcdf3;
+}
+
+.right-section {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+
+.circle {
+  background: lightblue;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.radius {
+  border-radius: 25px;
+}
+.margin {
+  margin-right: 5%;
+}
